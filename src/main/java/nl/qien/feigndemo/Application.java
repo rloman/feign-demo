@@ -29,5 +29,26 @@ public class Application {
         allUsers.forEach(user -> {
             System.out.println(user);
         });
+
+        int actualSize = allUsers.size();
+
+        User newUser = new User();
+        newUser.setId(314);
+        newUser.setName("Francien");
+        newUser.setUsername("fvanrooyen");
+        newUser.setEmail("francien@example.com");
+        userClient.create(newUser);
+
+        allUsers = userClient.findAll();
+
+        System.out.println(allUsers);
+
+        allUsers.forEach(user -> {
+            System.out.println(user);
+        });
+
+        assert allUsers.size() == actualSize+1;
+
+
     }
 }
