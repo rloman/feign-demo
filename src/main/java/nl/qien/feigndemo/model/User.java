@@ -1,11 +1,23 @@
 package nl.qien.feigndemo.model;
 
+import java.util.Set;
+
 public class User {
 
     private long id;
     private String name;
     private String username;
     private String email;
+
+    private Set<Post> posts;
+
+    public Set<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(Set<Post> posts) {
+        this.posts = posts;
+    }
 
     public long getId() {
         return id;
@@ -46,6 +58,7 @@ public class User {
                 ", name='" + name + '\'' +
                 ", username='" + username + '\'' +
                 ", email='" + email + '\'' +
+                ", posts=" + posts +
                 '}';
     }
 }
