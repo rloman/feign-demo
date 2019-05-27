@@ -32,11 +32,14 @@ public class Application {
 
         int actualSize = allUsers.size();
 
+        // create a user
         User newUser = new User();
         newUser.setId(314);
         newUser.setName("Francien");
         newUser.setUsername("fvanrooyen");
         newUser.setEmail("francien@example.com");
+
+        // create / post the user
         userClient.create(newUser);
 
         allUsers = userClient.findAll();
